@@ -66,8 +66,15 @@ public class CustomList extends ArrayAdapter<City> {
      * this check if a city is in the list
      * @ param city
      */
-    public boolean hasCity(City city){
-
+    public boolean hasCity(City newCity) {
+        for (City city : cities) {
+            if (city.hashCode() == newCity.hashCode()) {
+                if (city.equals(newCity)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

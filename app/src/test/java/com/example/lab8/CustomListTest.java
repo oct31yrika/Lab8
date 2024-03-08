@@ -33,7 +33,7 @@ public class CustomListTest {
     public void addCityTest() {
         list = MockCityList();
         int listSize = list.getCount();
-        list.addCity(new City("Estevan", "SK"));
+        list.addCity(new City(2,"Estevan", "SK"));
         assertEquals(list.getCount(), listSize + 1);
     }
 
@@ -42,19 +42,21 @@ public class CustomListTest {
      * add a new city object into list
      * and call hasCity method to see if it exists.
      */
+
+    @Test
     public void hasCityTest(){
         list = MockCityList();
-        City city_a = new City("Regina", "Saskatchewan");
-        list.add(city_a);
+        City city_a = new City(1, "Regina", "Saskatchewan");
+        list.addCity(city_a);
         assertTrue(list.hasCity(city_a));
 
-        City city_b = new City("Regina", "Saskatchewan");
+        City city_b = new City(1, "Regina", "Saskatchewan");
         assertTrue(list.hasCity(city_b));
 
-        City city_c = new City("Regina", "Saskatchewan");
+        City city_c = new City(2, "Regina", "Saskatchewan");
         assertFalse(list.hasCity(city_c));
 
-        City city_d = new City("Charlottetown", "Prince Edward Island");
+        City city_d = new City(1, "Charlottetown", "Prince Edward Island");
         assertFalse(list.hasCity(city_d));
     }
 }

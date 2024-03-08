@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         cityList = findViewById(R.id.city_list);
         cityDataList = new ArrayList<>();
 
-        cityDataList.add(new City("Edmonton","AB"));
-        cityDataList.add(new City("Vancouver","BC"));
-        cityDataList.add(new City("Toronto","ON"));
-        cityDataList.add(new City("Hamilton","ON"));
-        cityDataList.add(new City("Calgary","AB"));
-        cityDataList.add(new City("Waterloo","ON"));
+        cityDataList.add(new City(1,"Edmonton","AB"));
+        cityDataList.add(new City(2, "Vancouver","BC"));
+        cityDataList.add(new City(3, "Toronto","ON"));
+        cityDataList.add(new City(4, "Hamilton","ON"));
+        cityDataList.add(new City(5, "Calgary","AB"));
+        cityDataList.add(new City(6, "Waterloo","ON"));
 
 
         cityAdapter = new CustomList(this,cityDataList);
