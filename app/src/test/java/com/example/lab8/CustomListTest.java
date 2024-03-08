@@ -59,4 +59,17 @@ public class CustomListTest {
         City city_d = new City(1, "Charlottetown", "Prince Edward Island");
         assertFalse(list.hasCity(city_d));
     }
+
+    /**
+     * add a city into the list,
+     * delete it from the list and see if the list size changed
+     */
+    @Test
+    void testDelete() {
+        list = MockCityList();
+        City city = new City(2, "Regina", "Saskatchewan");
+        list.addCity(city);
+        list.deleteCity(city);
+        assertEquals(0, list.getCities().size());
+    }
 }
