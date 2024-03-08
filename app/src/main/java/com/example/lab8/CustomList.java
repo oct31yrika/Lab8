@@ -81,8 +81,17 @@ public class CustomList extends ArrayAdapter<City> {
         return cities;
     }
 
-    public void deleteCity(City city){
-
+    /**
+     * This method first checks if the city parameter has already in the citylist,
+     * if yes, then remove it from the list; else, throw an Illegal Argument Exception.
+     * @param newCity   A city object that the user wants to delete from the list
+     */
+    public void deleteCity(City newCity){
+        if (hasCity(newCity)){
+            cities.remove(newCity);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
 }
